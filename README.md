@@ -16,3 +16,5 @@ In a powershell terminal navigate to the directory you want this installed in (I
 Then pull the repo which should be "git clone https://github.com/Doggydo123/BYBAlgoTrader.git" 
 
 There should be a new folder nowcalled BYBAlgoTrader, cd into it (cd BYBAlgoTrader)
+
+And in VSCODE, go File -> Open Folder, and open the BYBAlgoTrader
