@@ -10,6 +10,9 @@ Visual Studio Code https://code.visualstudio.com/Download ,
 Python3 https://www.python.org/downloads/,
 Then in VSCode go to the extensions and type in python, you'll want the top ones like "Python" and "Python Debugger".
 
+Docker for containerising
+https://docs.docker.com/desktop/install/windows-install/
+
 **Step 1:**
 
     In a powershell terminal navigate to the directory you want this installed in (I usually create a folder called Git in my C: root folder).
