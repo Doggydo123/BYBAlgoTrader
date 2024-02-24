@@ -31,6 +31,8 @@ https://docs.docker.com/desktop/install/windows-install/
     git config --global user.name "Your Username"
     git config --global user.email "your_email@example.com"
     git config --global user.password "password"
+![image](https://github.com/Doggydo123/BYBAlgoTrader/assets/87892093/0279e3fc-efd6-4598-be3d-692ed2a22550)
+
 
 **Step 2:**
     Try running the main.py file in VSC, this should start the automated jobs, and the webserver, which should look like this 
