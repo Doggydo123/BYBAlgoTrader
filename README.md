@@ -35,3 +35,7 @@ https://docs.docker.com/desktop/install/windows-install/
 **Step 2:**
     Try running the main.py file in VSC, this should start the automated jobs, and the webserver, which should look like this 
 ![image](https://github.com/Doggydo123/BYBAlgoTrader/assets/87892093/b68248bb-2023-41ef-ab7f-f9aa29af88bf)
+
+For now editing will be simple, this is just the start, api calls are setup in App.py, and jobs are setup in Jobs.py
+![image](https://github.com/Doggydo123/BYBAlgoTrader/assets/87892093/0559df29-0dcf-4c29-b058-bbf8ba9fd014)
+
