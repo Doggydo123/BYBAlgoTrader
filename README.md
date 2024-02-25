@@ -1,4 +1,7 @@
 # BYBAlgoTrader
+**GENERAL NOTES**
+-Make pull requests to the develop branch not main.
+
 
 **Prerequisites**:
 
