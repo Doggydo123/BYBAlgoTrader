@@ -1,6 +1,4 @@
-# BYBAlgoTrader
-**Versions**
-Python 3.12.2
+
 
 
 **Prerequisites**:
