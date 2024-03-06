@@ -32,8 +32,7 @@ def profileTable(cursor):
         address TEXT,
         accountCreationDate TEXT,
         accountType TEXT,
-        stocksOwnedId INTEGER,
-        FOREIGN KEY(stocksOwnedId) REFERENCES stocksOwned(id))
+        stocksOwnedId INTEGER)
         """
     # Execute SQL
     cursor.execute(sql)
@@ -59,7 +58,7 @@ def stockTable(cursor):
 def stocksOwnedTable(cursor):
     sql = """
         CREATE TABLE IF NOT EXISTS stocksOwned (
-        id INTEGER PRIMARY KEY,
+        FOREIGN KEY(profileID) REFERENCES profile(id),
         name TEXT,
         stockID INTEGER,
         purchaseDate TEXT,

@@ -1,5 +1,5 @@
 from Models.Profile import Profile
-from ..DB import DBAutomation as DB
+from DB import DBAutomation as DB
 
 def getProfileById(profile_id: int):
     conn = DB.getDBConection
