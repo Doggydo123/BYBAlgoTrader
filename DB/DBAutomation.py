@@ -24,15 +24,15 @@ def setupTables(conn):
 def profileTable(cursor):
     sql = """
         CREATE TABLE IF NOT EXISTS profile (
-        id INTEGER PRIMARY KEY,
-        name TEXT,
-        lastname TEXT,
-        email TEXT,
-        username TEXT,
-        address TEXT,
-        accountCreationDate TEXT,
-        accountType TEXT,
-        stocksOwnedId INTEGER)
+            id INTEGER PRIMARY KEY,
+            name TEXT,
+            lastname TEXT,
+            email TEXT,
+            username TEXT,
+            address TEXT,
+            accountCreationDate TEXT,
+            accountType TEXT
+        )
         """
     # Execute SQL
     cursor.execute(sql)
@@ -58,16 +58,19 @@ def stockTable(cursor):
 def stocksOwnedTable(cursor):
     sql = """
         CREATE TABLE IF NOT EXISTS stocksOwned (
-        FOREIGN KEY(profileID) REFERENCES profile(id),
-        name TEXT,
-        stockID INTEGER,
-        purchaseDate TEXT,
-        purchasePrice REAL,
-        sellDate TEXT,
-        sellPrice REAL,
-        profitLoss REAL,
-        transactionType TEXT,
-        unitsowned INTEGER)
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            profileID INTEGER,
+            name TEXT,
+            stockID INTEGER,
+            purchaseDate TEXT,
+            purchasePrice REAL,
+            sellDate TEXT,
+            sellPrice REAL,
+            profitLoss REAL,
+            transactionType TEXT,
+            unitsOwned INTEGER,
+            FOREIGN KEY(profileID) REFERENCES profile(id)
+        )
         """
     # Execute SQL
     cursor.execute(sql)

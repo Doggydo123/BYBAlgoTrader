@@ -8,4 +8,3 @@ class Profile:
         self.address = address
         self.accountCreationDate = accountCreationDate
         self.accountType = accountType
-    

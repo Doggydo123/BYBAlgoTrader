@@ -2,7 +2,7 @@ from Models.Profile import Profile
 from DB import DBAutomation as DB
 
 def getProfileById(profile_id: int):
-    conn = DB.getDBConection
+    conn = DB.getDBConection()
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM profile WHERE id = ?", (profile_id,))
     row = cursor.fetchone()
