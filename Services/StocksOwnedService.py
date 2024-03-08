@@ -1,7 +1,7 @@
 import datetime
 from Models.StocksOwned import StocksOwned
-import StockService
-from ..DB import DBAutomation as DB
+from Services.StockService import getStock
+from DB import DBAutomation as DB
 
 def getStocksOwned(profileID):
     conn = DB.getDBConection()
@@ -14,10 +14,10 @@ def getStocksOwned(profileID):
 
 def BuySellStocks(stockCipher: str, amountToBuyOrSell: int, profile_id: int, transaction_type: str):
     # Get current datetime
-    current_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    current_date = datetime.datetime.now().strftime('%Y-%m-%d %H:%M: %S')
     
     # Get the stock details
-    stock = StockService.getStock(stockCipher)
+    stock = getStock(stockCipher)
     if stock:
         # Calculate the total transaction amount
         total_amount = stock.currentPrice * amountToBuyOrSell

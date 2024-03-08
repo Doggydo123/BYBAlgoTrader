@@ -1,5 +1,5 @@
 from Models.HistoricalData import HistoricalData
-from ..DB import DBAutomation as DB
+from DB import DBAutomation as DB
 
 def getAllHistoricalDataForStock(stockCipher: str):
     conn = DB.getDBConection()
