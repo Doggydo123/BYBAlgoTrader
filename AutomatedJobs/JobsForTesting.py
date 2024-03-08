@@ -1,7 +1,9 @@
 import datetime
 import time
+from Models.HistoricalData import HistoricalData
 from Models.Profile import Profile
 from Models.Stock import Stock
+from Services.HistoricalDataService import getAllHistoricalDataForStock, getPeriodOfHistoricalDataForStock, insertHistoricalData, insertHistoricalDataList
 from Services.ProfileService import insertProfile, getProfileById
 from Services.StockService import getStock, getStocks, insertStock, insertStocks
 from Services.StocksOwnedService import BuySellStocks, getStocksOwned
@@ -80,5 +82,70 @@ def testDBStocksOwnedJob():
     BuySellStocks(stock_cipher, amount_to_buy_or_sell, profile_id, transaction_type)
     print("Transaction complete.")
 
+
 def testDBHistoricalJob():
-    print()
+    # Test insertHistoricalData
+    print("Testing insertHistoricalData:")
+    # Create a sample historical data object
+    data = HistoricalData(
+        name="Company ABC",
+        stockID=1,
+        date=datetime.date(2023, 1, 1),
+        priceHigh=110.0,
+        priceLow=90.0,
+        priceAverage=100.0,
+        volume=10000,
+        adjustedClose=100.0,
+        marketCap=1000000
+    )
+    # Insert the sample historical data
+    insertHistoricalData(data)
+    print("Inserted historical data successfully.")
+
+    # Test insertHistoricalDataList
+    print("\nTesting insertHistoricalDataList:")
+    # Create a list of sample historical data objects
+    data_list = [
+        HistoricalData(
+            name="Company ABC",
+            stockID=1,
+            date=datetime.date(2023, 1, 2),
+            priceHigh=115.0,
+            priceLow=95.0,
+            priceAverage=105.0,
+            volume=12000,
+            adjustedClose=105.0,
+            marketCap=1100000
+        ),
+        HistoricalData(
+            name="Company ABC",
+            stockID=1,
+            date=datetime.date(2023, 1, 3),
+            priceHigh=112.0,
+            priceLow=92.0,
+            priceAverage=102.0,
+            volume=10500,
+            adjustedClose=102.0,
+            marketCap=1050000
+        )
+    ]
+    # Insert the list of sample historical data
+    insertHistoricalDataList(data_list)
+    print("Inserted list of historical data successfully.")
+
+    # Test getAllHistoricalDataForStock
+    print("\nTesting getAllHistoricalDataForStock:")
+    stockCipher = "ABC"
+    historical_data = getAllHistoricalDataForStock(stockCipher)
+    print("Historical data for stock with cipher", stockCipher, ":")
+    for data in historical_data:
+        print(data)
+
+    # Test getPeriodOfHistoricalDataForStock
+    print("\nTesting getPeriodOfHistoricalDataForStock:")
+    start_date = "2023-01-01"
+    end_date = "2023-01-02"
+    historical_data_period = getPeriodOfHistoricalDataForStock(stockCipher, start_date, end_date)
+    print("Historical data for stock with cipher", stockCipher, "between", start_date, "and", end_date, ":")
+    for data in historical_data_period:
+        print(data)
