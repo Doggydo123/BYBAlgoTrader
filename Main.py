@@ -7,3 +7,4 @@ if __name__ == '__main__':
     dbSetup.setup()
     jobs.start_job_thread()  # Start the automated job using threading
     server.run()
+

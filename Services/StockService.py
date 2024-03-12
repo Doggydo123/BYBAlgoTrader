@@ -1,6 +1,6 @@
 from typing import List
 from Models.Stock import Stock
-from ..DB import DBAutomation as DB
+from DB import DBAutomation as DB
 
 def getStock(cipher: str):
     conn = DB.getDBConection()

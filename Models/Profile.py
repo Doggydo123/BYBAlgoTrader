@@ -1,5 +1,5 @@
 class Profile:
-    def __init__(self, id, name, lastname, email, username, address, accountCreationDate, accountType):
+    def __init__(self, name, lastname, email, username, address, accountCreationDate, accountType, id=None):
         self.id = id
         self.name = name
         self.lastname = lastname
@@ -8,4 +8,3 @@ class Profile:
         self.address = address
         self.accountCreationDate = accountCreationDate
         self.accountType = accountType
-    
